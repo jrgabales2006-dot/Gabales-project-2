@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172d4a">
+  <meta name="description" content="Learn how to request current tuition and fee information from Kabankalan Catholic College.">
+  <title>Tuition &amp; Fees | Kabankalan Catholic College</title>
+  <style>
+    :root {
+      --navy: #172d4a;
+      --navy-deep: #10233c;
+      --gold: #d7a84d;
+      --gold-light: #f0d99e;
+      --cream: #f8f6f0;
+      --paper: #fffefa;
+      --ink: #1b2c40;
+      --muted: #647284;
+      --line: #e8e5dd;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Segoe UI", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .topline { background: var(--navy-deep); color: #e9edf2; font-size: .75rem; }
+    .topline-inner { display: flex; min-height: 35px; align-items: center; justify-content: space-between; gap: 18px; }
+    .topline p { margin: 0; }
+    .topline a { color: var(--gold-light); }
+    .navbar { position: sticky; z-index: 5; top: 0; border-bottom: 1px solid var(--line); background: rgba(255,254,250,.97); backdrop-filter: blur(12px); }
+    .nav-inner { display: flex; min-height: 80px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark { display: grid; width: 44px; height: 44px; flex: 0 0 44px; place-items: center; border: 1px solid #d5bd85; border-radius: 50%; color: var(--navy); }
+    .brand-mark svg { width: 28px; height: 28px; }
+    .brand-name { display: block; color: var(--navy); font: 700 1rem/1.1 var(--serif); }
+    .brand-place { display: block; margin-top: 5px; color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: #405064; font-size: .83rem; font-weight: 650; }
+    .nav-links a:hover { color: #a67b31; }
+    .nav-links .nav-cta { padding: 12px 17px; border-radius: 3px; background: var(--navy); color: white; }
+    .nav-links .nav-cta:hover { background: #294a6b; }
+    .menu-toggle { display: none; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 4px; background: transparent; color: var(--navy); }
+    .menu-toggle svg { width: 20px; height: 20px; }
+    .hero { position: relative; overflow: hidden; background: linear-gradient(115deg, var(--navy), #294b68); color: white; }
+    .hero::after { position: absolute; top: -270px; right: -80px; width: 650px; height: 650px; border: 1px solid rgba(240,217,158,.19); border-radius: 50%; box-shadow: 0 0 0 40px rgba(240,217,158,.035), 0 0 0 85px rgba(240,217,158,.025); content: ""; }
+    .hero-inner { position: relative; z-index: 1; padding: 88px 0 94px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold-light); font-size: .73rem; font-weight: 750; letter-spacing: .17em; text-transform: uppercase; }
+    .eyebrow::before { width: 24px; height: 1px; background: currentColor; content: ""; }
+    h1 { max-width: 720px; margin: 18px 0 0; font: 400 clamp(3rem, 7vw, 5rem)/1.02 var(--serif); letter-spacing: -.04em; }
+    .hero p { max-width: 610px; margin: 21px 0 0; color: #d4dde6; font-size: 1rem; line-height: 1.8; }
+    .crumbs { display: flex; align-items: center; gap: 9px; margin-top: 28px; color: #cad4de; font-size: .78rem; }
+    .crumbs a { color: var(--gold-light); }
+    .crumbs span { opacity: .7; }
+    .content { padding: 82px 0 100px; }
+    .content-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: start; }
+    .section-label { color: #a67b31; font-size: .73rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin: 13px 0 0; color: var(--navy); font: 400 clamp(2rem, 4vw, 3rem)/1.12 var(--serif); letter-spacing: -.03em; }
+    .intro { margin: 17px 0 0; color: var(--muted); font-size: .95rem; line-height: 1.8; }
+    .info-list { display: grid; gap: 12px; margin-top: 29px; }
+    .info-card { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 19px; border: 1px solid var(--line); background: white; }
+    .info-icon { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 50%; background: #f1ecdf; color: #9c7228; }
+    .info-icon svg { width: 19px; height: 19px; }
+    .info-card h3 { margin: 2px 0 6px; color: var(--navy); font: 400 1.18rem var(--serif); }
+    .info-card p { margin: 0; color: var(--muted); font-size: .83rem; line-height: 1.65; }
+    .request-card { padding: 31px; border: 1px solid #e8e3d8; background: var(--cream); }
+    .request-symbol { display: grid; width: 50px; height: 50px; place-items: center; border: 1px solid #e4d4ad; border-radius: 50%; color: #a67b31; }
+    .request-symbol svg { width: 23px; height: 23px; }
+    .request-card h2 { margin-top: 20px; font-size: 2rem; }
+    .request-card p { margin: 14px 0 0; color: var(--muted); font-size: .88rem; line-height: 1.75; }
+    .button { display: inline-flex; min-height: 49px; align-items: center; justify-content: center; gap: 10px; margin-top: 23px; padding: 0 19px; border-radius: 3px; background: var(--gold); color: var(--navy-deep); font-size: .84rem; font-weight: 750; transition: background .2s, transform .2s; }
+    .button:hover { transform: translateY(-2px); background: #e4ba68; }
+    .button svg { width: 16px; height: 16px; }
+    .note { margin-top: 19px; padding: 15px 17px; border-left: 3px solid var(--gold); background: white; color: #5d6875; font-size: .78rem; line-height: 1.65; }
+    .faq { margin-top: 76px; padding-top: 61px; border-top: 1px solid var(--line); }
+    .faq-head { max-width: 620px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; margin-top: 29px; }
+    .faq-item { padding: 23px; border: 1px solid var(--line); }
+    .faq-item h3 { margin: 0; color: var(--navy); font: 400 1.2rem var(--serif); }
+    .faq-item p { margin: 10px 0 0; color: var(--muted); font-size: .84rem; line-height: 1.7; }
+    footer { padding: 40px 0 22px; background: var(--navy-deep); color: white; }
+    .footer-main { display: flex; justify-content: space-between; gap: 30px; padding-bottom: 25px; }
+    .footer-copy { max-width: 360px; }
+    .footer-copy strong { font: 700 1rem var(--serif); }
+    .footer-copy p { margin: 10px 0 0; color: #bdc9d4; font-size: .8rem; line-height: 1.65; }
+    .footer-links { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 18px 25px; padding-top: 5px; }
+    .footer-links a { color: #e1e6eb; font-size: .8rem; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom { padding-top: 17px; border-top: 1px solid rgba(255,255,255,.14); color: #aebac6; font-size: .72rem; }
+    .footer-bottom p { margin: 0; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .topline-inner { justify-content: center; text-align: center; }
+      .topline-inner p:last-child { display: none; }
+      .nav-inner { min-height: 70px; }
+      .brand-name { font-size: .91rem; }
+      .brand-place { font-size: .56rem; }
+      .menu-toggle { display: grid; cursor: pointer; }
+      .nav-links { position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 18px 16px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 13px 4px; border-bottom: 1px solid #f0eee8; }
+      .nav-links .nav-cta { margin-top: 9px; text-align: center; }
+      .hero-inner { padding: 69px 0 72px; }
+      .content { padding: 62px 0 76px; }
+      .content-grid { grid-template-columns: 1fr; gap: 35px; }
+      .request-card { padding: 26px; }
+      .faq { margin-top: 60px; padding-top: 47px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-main { display: block; }
+      .footer-links { margin-top: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <div class="wrap topline-inner">
+      <p>A community of learning, faith, and service</p>
+      <p><a href="index.html#visit">Kabankalan City, Negros Occidental</a></p>
+    </div>
+  </div>
+  <header class="navbar">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="Kabankalan Catholic College home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M16 3v26M9 10h14M11 7h10M7 28h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6 17c0 6 4.5 9 10 9s10-3 10-9" stroke="#b3832f" stroke-width="1.5"/></svg>
+        </span>
+        <span><span class="brand-name">Kabankalan Catholic College</span><span class="brand-place">Kabankalan City · Philippines</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="courses.html">Programs</a>
+        <a href="index.html#formation">Our community</a>
+        <a href="index.html#visit">Visit</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-cta" href="index.html#admissions">Admissions <span aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <span class="eyebrow">Plan for your future</span>
+        <h1>Tuition &amp; fees</h1>
+        <p>Get the information you need to plan for college. For current tuition, fees, and payment details, request the official schedule directly from Kabankalan Catholic College.</p>
+        <div class="crumbs"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Tuition &amp; fees</span></div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="wrap">
+        <div class="content-grid">
+          <div>
+            <span class="section-label">Getting started</span>
+            <h2>Know what to ask before you enroll.</h2>
+            <p class="intro">School fees can depend on your program, year level, and the current academic year. Ask the college office for an official, itemized fee schedule so you can plan with up-to-date information.</p>
+            <div class="info-list">
+              <article class="info-card">
+                <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg></span>
+                <div><h3>Request a current breakdown</h3><p>Ask which tuition and other school fees apply to your intended program and year level.</p></div>
+              </article>
+              <article class="info-card">
+                <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <div><h3>Confirm payment dates</h3><p>Check the current enrollment deadlines, payment schedule, and accepted payment methods with the college.</p></div>
+              </article>
+              <article class="info-card">
+                <span class="info-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z"/><path d="M9 12h6"/></svg></span>
+                <div><h3>Ask about assistance</h3><p>Contact the school to ask whether financial assistance or other support options are currently available.</p></div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="request-card">
+            <span class="request-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+            <h2>Get official fee information.</h2>
+            <p>For accurate amounts and enrollment requirements, reach out to the college office. Let them know which program and school year you are asking about.</p>
+            <a class="button" href="index.html#visit">Contact the college <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10h13M10 4l6 6-6 6"/></svg></a>
+            <div class="note">This page does not publish tuition amounts. Please confirm all costs and payment arrangements with Kabankalan Catholic College before making enrollment decisions.</div>
+          </aside>
+        </div>
+
+        <section class="faq" aria-labelledby="faq-title">
+          <div class="faq-head">
+            <span class="section-label">Helpful questions</span>
+            <h2 id="faq-title">Before you contact the college</h2>
+          </div>
+          <div class="faq-grid">
+            <article class="faq-item">
+              <h3>What details should I provide?</h3>
+              <p>Share the program you are interested in, your intended year level, and the academic year you plan to attend.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Can I rely on an older fee schedule?</h3>
+              <p>Fees and enrollment requirements may change. Always request the latest official information from the college.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Where can I ask about admissions?</h3>
+              <p>Use the admissions and visit information on our homepage to find KCC and plan your inquiry.</p>
+            </article>
+            <article class="faq-item">
+              <h3>How do I visit the campus?</h3>
+              <p>Check the college location and confirm office hours with the school before traveling.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-copy">
+          <strong>Kabankalan Catholic College</strong>
+          <p>A community of learning, faith, and service in Kabankalan City, Negros Occidental.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About KCC</a>
+          <a href="courses.html">Programs</a>
+          <a href="events.html">Events</a>
+          <a href="trainers.html">Faculty</a>
+          <a href="index.html#admissions">Admissions</a>
+          <a href="index.html#visit">Visit us</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom"><p>© <span id="current-year"></span> Kabankalan Catholic College</p></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector("#primary-navigation");
+
+    menuButton.addEventListener("click", () => {
+      const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+      menuButton.setAttribute("aria-expanded", String(!isExpanded));
+      menuButton.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
+      navigation.classList.toggle("is-open", !isExpanded);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+        navigation.classList.remove("is-open");
+      }
+    });
+
+    document.querySelector("#current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
