@@ -83,8 +83,8 @@
     .navbar { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(232,229,221,.8); background: rgba(255,254,250,.96); backdrop-filter: blur(14px); }
     .nav-inner { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 28px; }
     .brand { display: inline-flex; min-width: 255px; align-items: center; gap: 12px; }
-    .brand-mark { display: grid; width: 46px; height: 46px; flex: 0 0 46px; place-items: center; border: 1px solid #d5bd85; border-radius: 50%; color: var(--navy); }
-    .brand-mark svg { width: 29px; height: 29px; }
+    .brand-mark { display: block; width: 46px; height: 46px; flex: 0 0 46px; overflow: hidden; border-radius: 3px; background: white; }
+    .brand-image { display: block; width: 100%; height: 100%; object-fit: contain; }
     .brand-name { display: block; color: var(--navy); font: 700 1rem/1.1 var(--serif); }
     .brand-place { display: block; margin-top: 5px; color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: clamp(17px, 2.4vw, 34px); }
@@ -287,12 +287,7 @@
   <header class="navbar">
     <div class="wrap nav-inner">
       <a class="brand" href="#home" aria-label="Kabankalan Catholic College home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none">
-            <path d="M16 3v26M9 10h14M11 7h10M7 28h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-            <path d="M6 17c0 6 4.5 9 10 9s10-3 10-9" stroke="#b3832f" stroke-width="1.5"/>
-          </svg>
-        </span>
+        <span class="brand-mark"><img class="brand-image" src="assets/kcc-logo.png" alt=""></span>
         <span><span class="brand-name">Kabankalan Catholic College</span><span class="brand-place">Kabankalan City · Philippines</span></span>
       </a>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
@@ -465,7 +460,7 @@
       <div class="footer-main">
         <div class="footer-brand">
           <a class="brand" href="#home">
-            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 3v26M9 10h14M11 7h10M7 28h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M6 17c0 6 4.5 9 10 9s10-3 10-9" stroke="#d7a84d" stroke-width="1.5"/></svg></span>
+            <span class="brand-mark"><img class="brand-image" src="assets/kcc-logo.png" alt=""></span>
             <span><span class="brand-name">Kabankalan Catholic College</span><span class="brand-place">Kabankalan City · Philippines</span></span>
           </a>
           <p>A community of learning, faith, and service in Kabankalan City, Negros Occidental.</p>
