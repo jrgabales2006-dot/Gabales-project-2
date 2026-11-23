@@ -101,6 +101,9 @@ a { color: inherit; text-decoration: none; }
 .program-card h4 { margin: 20px 0 7px; color: #9c7228; font-size: .71rem; letter-spacing: .09em; text-transform: uppercase; }
 .program-card ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
 .program-card li { padding: 6px 9px; border-radius: 20px; background: var(--cream); color: #4d5b6b; font-size: .76rem; }
+.track-section { margin-top: 27px; }
+.track-title { margin: 10px 0 7px; color: var(--navy); font: 400 1.85rem/1.2 var(--serif); }
+.track-lead { margin: 0; color: var(--muted); font-size: .88rem; }
 .notice { margin-top: 22px; padding: 16px 18px; border-left: 3px solid var(--gold); background: var(--cream); color: #586574; font-size: .82rem; line-height: 1.7; }
 .place-card { padding: 28px; border: 1px solid var(--line); background: var(--cream); }
 .place-card h2 { margin: 0; color: var(--navy); font: 400 1.55rem var(--serif); }
